@@ -1,15 +1,15 @@
 /* empty css                                     */
 import { c as createAstro, a as createComponent, r as renderTemplate, b as renderComponent, m as maybeRenderHead, d as renderSlot, e as addAttribute } from '../../chunks/astro/server_bMn8tCat.mjs';
 import 'kleur/colors';
-import { g as getCollection } from '../../chunks/_astro_content_wasJ2WD1.mjs';
+import { g as getCollection } from '../../chunks/_astro_content_C19ef6d_.mjs';
 import { a as formatTag } from '../../chunks/helpers_IQzZvkDr.mjs';
 /* empty css                                    */
-import { $ as $$BasicLayout } from '../../chunks/Icon_MISruTs7.mjs';
-import { $ as $$PostItemV2 } from '../../chunks/PostItemV2_CT_jyCA0.mjs';
-import { $ as $$Navbar } from '../../chunks/Navbar_CyhXkS58.mjs';
+import { $ as $$BasicLayout } from '../../chunks/Icon_BNfNYvvF.mjs';
+import { $ as $$PostItemV2 } from '../../chunks/PostItemV2_CIoqhPiQ.mjs';
+import { $ as $$Navbar } from '../../chunks/Navbar_CISsp3sU.mjs';
 export { renderers } from '../../renderers.mjs';
 
-const $$Astro$1 = createAstro("https://bento.engage-dev.com/");
+const $$Astro$1 = createAstro("https://projects.imartin.dev/");
 const $$TagsLayout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$TagsLayout;
@@ -17,7 +17,7 @@ const $$TagsLayout = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "BasicLayout", $$BasicLayout, { "title": title, "description": description }, { "": ($$result2) => renderTemplate`${maybeRenderHead()}<div class=""></div>`, "default": ($$result2) => renderTemplate`  ${renderSlot($$result2, $$slots["default"])} ` })}`;
 }, "/Users/martindavila/Developer/projects-imartin.dev/src/layouts/TagsLayout.astro", void 0);
 
-const $$Astro = createAstro("https://bento.engage-dev.com/");
+const $$Astro = createAstro("https://projects.imartin.dev/");
 async function getStaticPaths() {
   const posts = await getCollection("posts");
   const tagSet = /* @__PURE__ */ new Set();
@@ -72,7 +72,7 @@ const $$ = createComponent(async ($$result, $$props, $$slots) => {
   });
   let filteredPosts = pageObjects;
   const Content = filteredPosts.map((post) => post);
-  return renderTemplate` ${maybeRenderHead()}<div> ${renderComponent($$result, "TagsLayout", $$TagsLayout, { "title": "engage-bento: tags", "description": "" })} ${renderComponent($$result, "Navbar", $$Navbar, {})} <div class="w-screen h-full flex flex-col justify-start items-start max-w-2xl mx-auto p-2 md:py-5"> <h1 class="text-5xl f-bold mb-2 text-neutral-100"> <a${addAttribute(`/tags`, "href")} class="f-light text-neutral-100/70">tag:</a>
+  return renderTemplate` ${maybeRenderHead()}<div> ${renderComponent($$result, "TagsLayout", $$TagsLayout, { "title": "projects.imartin.dev : tags", "description": "" })} ${renderComponent($$result, "Navbar", $$Navbar, {})} <div class="w-screen h-full flex flex-col justify-start items-start max-w-2xl mx-auto p-2 md:py-5"> <h1 class="text-5xl f-bold mb-2 text-neutral-100"> <a${addAttribute(`/tags`, "href")} class="f-light text-neutral-100/70">tag:</a>
 #${formatTag(tagParam)} </h1> <div class="f-light mb-4 text-neutral-100/50">
 Other posts tagged with "${tagParam}".
 </div> <div class="w-full"> <ul class=""> ${Content.map((post) => renderTemplate`<div class="post-item opacity-0"> ${renderComponent($$result, "PostItem", $$PostItemV2, { "title": post.data.title || "No title", "description": post.data.description || "No description", "date": post.data.pubDate ? new Date(post.data.pubDate) : /* @__PURE__ */ new Date(), "url": post.slug, "category": post.data.category || "No category", "tags": post.data.tags || [], "image": post.data.image || "" })} </div>`)} </ul> </div> </div> </div>`;

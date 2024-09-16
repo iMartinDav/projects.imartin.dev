@@ -1,4 +1,4 @@
-import { g as getCollection } from '../../../chunks/_astro_content_wasJ2WD1.mjs';
+import { g as getCollection } from '../../../chunks/_astro_content_C19ef6d_.mjs';
 export { renderers } from '../../../renderers.mjs';
 
 const allPosts = await getCollection("posts");

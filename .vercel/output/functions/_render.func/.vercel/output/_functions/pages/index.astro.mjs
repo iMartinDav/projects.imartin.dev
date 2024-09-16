@@ -1,8 +1,8 @@
 /* empty css                                  */
 import { c as createAstro, a as createComponent, r as renderTemplate, b as renderComponent, d as renderSlot, m as maybeRenderHead, F as Fragment, e as addAttribute } from '../chunks/astro/server_bMn8tCat.mjs';
 import 'kleur/colors';
-import { $ as $$BasicLayout, a as $$Icon } from '../chunks/Icon_MISruTs7.mjs';
-import { g as getCollection } from '../chunks/_astro_content_wasJ2WD1.mjs';
+import { $ as $$BasicLayout, a as $$Icon } from '../chunks/Icon_BNfNYvvF.mjs';
+import { g as getCollection } from '../chunks/_astro_content_C19ef6d_.mjs';
 import 'clsx';
 import { ssr, ssrHydrationKey, escape, createComponent as createComponent$1 } from 'solid-js/web';
 import { createSignal, Show } from 'solid-js';
@@ -11,7 +11,7 @@ import { G as GlobeComponent } from '../chunks/Globe_Dl9Y4lTy.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
-const $$Astro$5 = createAstro("https://bento.engage-dev.com/");
+const $$Astro$5 = createAstro("https://projects.imartin.dev/");
 const $$Layout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$Layout;
@@ -19,7 +19,7 @@ const $$Layout = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "BasicLayout", $$BasicLayout, { "title": title, "description": description }, { "default": ($$result2) => renderTemplate`  ${renderSlot($$result2, $$slots["default"])} `, "loader": ($$result2) => renderTemplate`${maybeRenderHead()}<div class="loader bg-darkslate-400 text-neutral-50 text-3xl font-black uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0"></div>` })}`;
 }, "/Users/martindavila/Developer/projects-imartin.dev/src/layouts/Layout.astro", void 0);
 
-const $$Astro$4 = createAstro("https://bento.engage-dev.com/");
+const $$Astro$4 = createAstro("https://projects.imartin.dev/");
 const $$Content = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$Content;
@@ -27,7 +27,7 @@ const $$Content = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`${title && renderTemplate`${maybeRenderHead()}<h2 class="text-2xl f-bold m-0 z-20 drop-shadow">${title}</h2>`}${body && renderTemplate`<p class="m-0 f-light text-base">${body}</p>`}${renderSlot($$result2, $$slots["default"])}` })}`;
 }, "/Users/martindavila/Developer/projects-imartin.dev/src/components/Card/Content.astro", void 0);
 
-const $$Astro$3 = createAstro("https://bento.engage-dev.com/");
+const $$Astro$3 = createAstro("https://projects.imartin.dev/");
 const $$Index$1 = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Index$1;
@@ -45,7 +45,7 @@ const $$ProjectsCard = createComponent(async ($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "Card", $$Index$1, { "colSpan": "md:col-span-1", "rowSpan": "md:row-span-2", "title": "Projects", "href": "/projects" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="group"> <div class="line-clamp-4"> ${mostRecentProjectPost ? renderTemplate`<a${addAttribute(`/${mostRecentProjectPost.data.category}/${mostRecentProjectPost.slug || "#default"}`, "href")} target="" rel="noopener noreferrer" class="text-neutral-100 md:text-neutral-100/70 text-sm f-light md:group-hover:text-neutral-100 transition-colors duration-300"> <div class="group/newPost mt-5"> <div class="f-bold text-lg text-neutral-100"> ${mostRecentProjectPost.data.title} </div>  <div class="text-neutral-100/70 md:group-hover/newPost:text-neutral-100"> ${mostRecentProjectPost.data.description} </div> </div> </a>` : renderTemplate`<p>No recent posts in 'Projects' category.</p>`} </div> </div> ` })}`;
 }, "/Users/martindavila/Developer/projects-imartin.dev/src/components/ProjectsCard.astro", void 0);
 
-const $$Astro$2 = createAstro("https://bento.engage-dev.com/");
+const $$Astro$2 = createAstro("https://projects.imartin.dev/");
 const $$Button = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Button;
@@ -103,7 +103,7 @@ const $$TimeZoneCard = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate` ${renderComponent($$result, "Card", $$Index$1, { "colSpan": "lg:col-span-2", "rowSpan": "md:row-span-2", "title": "Local Time:" }, { "default": ($$result2) => renderTemplate`  ${maybeRenderHead()}<time datetime="" id="timeDisplay" class="text-3xl md:text-2xl lg:text-5xl flex f-bold h-full mt-5"> ${formatTimeForLosAngeles(getCurrentTimeInLosAngeles())} </time> ` })}`;
 }, "/Users/martindavila/Developer/projects-imartin.dev/src/components/TimeZoneCard.astro", void 0);
 
-const $$Astro$1 = createAstro("https://bento.engage-dev.com/");
+const $$Astro$1 = createAstro("https://projects.imartin.dev/");
 const $$TechCard = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$TechCard;
@@ -119,7 +119,7 @@ const $$TechCard = createComponent(($$result, $$props, $$slots) => {
     </div> --> </div> </a>`;
 }, "/Users/martindavila/Developer/projects-imartin.dev/src/components/TechCard.astro", void 0);
 
-const $$Astro = createAstro("https://bento.engage-dev.com/");
+const $$Astro = createAstro("https://projects.imartin.dev/");
 const $$Technologies = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Technologies;
