@@ -1,0 +1,29 @@
+---
+import Card from "./Card/index.astro";
+import Technologies from "./Technologies.astro";
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
+  <div class="flex flex-col gap-2">
+    <p class="text-sm text-neutral-100/70 f-light">Lyon, France</p>
+
+    <div class="flex flex-col">
+      <div class="text-xl f-bold m-0 z-20 mt-5">Bioinformatics Tech Stack</div>
+      <p class="text-sm text-neutral-100/70 f-light">
+        Tools I use to decode genomes. Click to see related projects:
+      </p>
+    </div>
+
+    <Technologies />
+
+    <p class="text-sm text-neutral-100/70 f-light">
+      While these are my preferred tools, I adapt to use the best solution for
+      each bioinformatics challenge.
+    </p>
+
+    <p class="text-sm text-neutral-100/70 f-light mt-2">
+      Passionate about creating innovative software solutions to unlock insights
+      from complex biological data.
+    </p>
+  </div>
+</Card>

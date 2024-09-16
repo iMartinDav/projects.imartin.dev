@@ -1,0 +1,74 @@
+---
+import Card from "./Card/index.astro";
+import { LINKS } from "../lib/constants";
+import Button from "./Button.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
+  <div class="h-full">
+    <header class="flex items-center">
+      <h1 class="text-white text-2xl font-bold">Let’s Connect and Innovate!</h1>
+    </header>
+    <div class="flex flex-col mt-4">
+      <div class="text-neutral-100/70">Reach Out</div>
+
+      <div class="w-full mt-2">
+        <a href={`mailto:${LINKS.email}`} aria-label="Email me">
+          <Button aria-label="Email me">
+            <div class="flex items-center gap-2">
+              <Icon name="ri:mail-fill" class="h-5 w-5" />
+              <div>Send a Message</div>
+              <span class="sr-only">Send a Message</span>
+            </div>
+          </Button>
+        </a>
+      </div>
+      <div class="flex flex-col mt-4 w-full">
+        <h2 class="text-neutral-100/70">Connect with Me</h2>
+        <div class="flex flex-col gap-1 w-full">
+          <div>
+            <a
+              href={LINKS.linkedin}
+              target="_blank"
+              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
+            >
+              <Icon name="ri:linkedin-fill" class="h-5 w-5" />
+              <div>Let’s Network</div>
+            </a>
+          </div>
+          <div>
+            <a
+              href={LINKS.github}
+              target="_blank"
+              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
+            >
+              <Icon name="ri:github-fill" class="h-5 w-5" />
+              <div>Explore My Projects</div>
+            </a>
+          </div>
+          <div>
+            <a
+              href={LINKS.twitter}
+              target="_blank"
+              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
+            >
+              <Icon name="ri:twitter-x-fill" class="h-5 w-5" />
+              <div>Follow the Latest</div>
+            </a>
+          </div>
+          <div>
+            <a
+              href={LINKS.discord}
+              target="_blank"
+              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
+            >
+              <Icon name="ri:discord-fill" class="h-5 w-5" />
+              <div>Join the Conversation</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Card>

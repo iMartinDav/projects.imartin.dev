@@ -1,0 +1,77 @@
+---
+import Card from "./Card/index.astro";
+import Button from "./Button.astro";
+import { Icon } from "astro-icon/components";
+import { LINKS } from "../lib/constants";
+import Tooltip from "./Tooltip/index";
+---
+
+<Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
+  <div class="flex w-full h-full gap-5">
+    <div class="flex flex-col justify-between md:max-h-[300px] gap-4 z-50">
+      <div class="flex flex-col h-full">
+        <h6 class="text-sm f-light m-0 text-neutral-100/50">
+          welcome to my bioinformatics hub
+        </h6>
+        <p
+          class="m-0 f-light text-xl lg:text-2xl w-2/3 lg:w-full f-light drop-shadow-lg"
+        >
+          I'm <b>Martin</b>, a bioinformatics engineer turning gigabytes of
+          genomic data into actionable insights. From BLAST searches to Hi-C
+          analysis, I'm here to decode the language of life!
+        </p>
+      </div>
+      <div class="flex gap-2 md:gap-4">
+        <a href={LINKS.github} aria-label="github profile" target="_blank">
+          <Button aria-label="github profile">
+            <Icon name="ri:github-fill" class="h-7 w-7" />
+            <span class="sr-only"
+              >GitHub: Where I commit code and push the boundaries of genomic
+              analysis</span
+            >
+          </Button>
+        </a>
+        <a href={LINKS.linkedin} aria-label="linkedin profile" target="_blank">
+          <Button aria-label="linkedin profile">
+            <Icon name="ri:linkedin-box-fill" class="h-7 w-7" />
+            <span class="sr-only"
+              >LinkedIn: Connect for bioinformatics insights and collaborations</span
+            >
+          </Button>
+        </a>
+        <a href={LINKS.twitter} aria-label="twitter profile" target="_blank">
+          <Button aria-label="twitter profile">
+            <Icon name="ri:twitter-x-fill" class="h-7 w-7" />
+            <span class="sr-only"
+              >Twitter: Follow for updates on bioinformatics trends and
+              breakthroughs</span
+            >
+          </Button>
+        </a>
+        <Tooltip client:visible>
+          <Button aria-label="bioinformatics fact">
+            <Icon name="ri:dna-fill" class="h-7 w-7" />
+            <span class="sr-only">Click for a bioinformatics insight!</span>
+          </Button>
+          <span slot="tooltip"
+            >Fun fact: I developed a novel computational method that improved
+            Hi-C spatial resolution by 40%, bringing us closer to understanding
+            3D genome organization!</span
+          >
+        </Tooltip>
+      </div>
+    </div>
+
+    <img
+      src="https://github.com/iMartinDav.png"
+      class="absolute right-0 bottom-0 z-[-1] object-left opacity-70 object-cover w-1/2 sm:w-1/3 lg:w-auto h-full lg:relative sm:opacity-100 lg:rounded-lg lg:border md:group-hover:border-neutral-100/70 border-gray-500 border-l-none"
+      alt="Martin analyzing complex genomic data structures"
+    />
+
+    <div
+      class="absolute z-0 bottom-0 right-0 bg-gradient-to-r from-darkslate-400 to-none h-full w-1/2 sm:w-1/3 md:w-1/3 lg:w-[21.75rem]
+       h-full lg:rounded-lg"
+    >
+    </div>
+  </div>
+</Card>
