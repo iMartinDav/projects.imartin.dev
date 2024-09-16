@@ -7,8 +7,8 @@ export async function GET({params, request}: {params: any, request: any}) {
     JSON.stringify({
       msg: 'Hello World!',
       app: 'Projects-imartin.dav',
-      repository: 'https://github.com/engageintellect/astro-bento',
-      version: '1.5.0',
+      repository: 'https://github.com/iMartinDav/projects.imartin.dev',
+      version: '1.0.0',
       endpoints: [
         '/api/v1/hello.json',
         '/api/v1/fetchNowFeed.json',

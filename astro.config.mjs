@@ -11,13 +11,13 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://bento.engage-dev.com/",
+  site: "https://projects.imartin.dev/",
   integrations: [
     sitemap(),
     robotsTxt({
       sitemap: [
-        "https://bento.engage-dev.com/sitemap-index.xml",
-        "https://bento.engage-dev.com/sitemap-0.xml",
+        "https://projects.imartin.dev/sitemap-index.xml",
+        "https://projects.imartin.dev/sitemap-0.xml",
       ],
     }),
     solidJs(),

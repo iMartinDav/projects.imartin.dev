@@ -1,4 +1,4 @@
-# astro-bento-portfolio
+# astro-projects.imartin.dev-bento-portfolio
 
 ## A personal portfolio website made using `Astro`.
 
@@ -31,7 +31,7 @@
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/engageintellect/astro-bento
+$ git clone https://github.com/iMartinDav/projects.imartin.dev.git
 ```
 
 ```bash
