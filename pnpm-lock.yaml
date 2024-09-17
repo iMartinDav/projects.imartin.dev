@@ -16,10 +16,10 @@ importers:
         version: 3.1.6
       '@astrojs/solid-js':
         specifier: ^4.4.1
-        version: 4.4.1(solid-js@1.8.19)(vite@5.4.5(@types/node@22.0.0))
+        version: 4.4.1(solid-js@1.8.19)(vite@5.4.6(@types/node@22.0.0))
       '@astrojs/svelte':
         specifier: ^5.7.0
-        version: 5.7.0(astro@4.15.6(@types/node@22.0.0)(rollup@4.21.3)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.4.5(@types/node@22.0.0))
+        version: 5.7.0(astro@4.15.6(@types/node@22.0.0)(rollup@4.21.3)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.4.6(@types/node@22.0.0))
       '@astrojs/vercel':
         specifier: ^7.8.1
         version: 7.8.1(astro@4.15.6(@types/node@22.0.0)(rollup@4.21.3)(typescript@5.5.4))
@@ -98,7 +98,7 @@ importers:
         version: 7.4.3
       '@unocss/astro':
         specifier: ^0.59.0
-        version: 0.59.4(rollup@4.21.3)(vite@5.4.5(@types/node@22.0.0))
+        version: 0.59.4(rollup@4.21.3)(vite@5.4.6(@types/node@22.0.0))
       '@unocss/postcss':
         specifier: ^0.59.0
         version: 0.59.4(postcss@8.4.47)
@@ -116,7 +116,7 @@ importers:
         version: 2.13.0
       unocss:
         specifier: ^0.59.0
-        version: 0.59.4(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.5(@types/node@22.0.0))
+        version: 0.59.4(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.6(@types/node@22.0.0))
 
 packages:
 
@@ -2855,8 +2855,8 @@ packages:
       '@testing-library/jest-dom':
         optional: true
 
-  vite@5.4.5:
-    resolution: {integrity: sha512-pXqR0qtb2bTwLkev4SE3r4abCNioP3GkjvIDLlzziPpXtHgiJIjuKl+1GN6ESOT3wMjG3JTeARopj2SwYaHTOA==}
+  vite@5.4.6:
+    resolution: {integrity: sha512-IeL5f8OO5nylsgzd9tq4qD2QqI0k2CQLGrWD0rCN0EQJZpBK5vJAx0I+GDkMOXxQX/OfFHMuLIx6ddAxGX/k+Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3038,18 +3038,18 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/solid-js@4.4.1(solid-js@1.8.19)(vite@5.4.5(@types/node@22.0.0))':
+  '@astrojs/solid-js@4.4.1(solid-js@1.8.19)(vite@5.4.6(@types/node@22.0.0))':
     dependencies:
       solid-js: 1.8.19
-      vite-plugin-solid: 2.10.2(solid-js@1.8.19)(vite@5.4.5(@types/node@22.0.0))
+      vite-plugin-solid: 2.10.2(solid-js@1.8.19)(vite@5.4.6(@types/node@22.0.0))
     transitivePeerDependencies:
       - '@testing-library/jest-dom'
       - supports-color
       - vite
 
-  '@astrojs/svelte@5.7.0(astro@4.15.6(@types/node@22.0.0)(rollup@4.21.3)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.4.5(@types/node@22.0.0))':
+  '@astrojs/svelte@5.7.0(astro@4.15.6(@types/node@22.0.0)(rollup@4.21.3)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.4.6(@types/node@22.0.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.4.5(@types/node@22.0.0))
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.4.6(@types/node@22.0.0))
       astro: 4.15.6(@types/node@22.0.0)(rollup@4.21.3)(typescript@5.5.4)
       svelte: 4.2.18
       svelte2tsx: 0.7.13(svelte@4.2.18)(typescript@5.5.4)
@@ -3089,7 +3089,7 @@ snapshots:
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.24.7
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   '@babel/compat-data@7.25.0': {}
 
@@ -3265,7 +3265,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   '@babel/parser@7.25.0':
     dependencies:
@@ -3766,26 +3766,26 @@ snapshots:
 
   '@studio-freight/lenis@1.0.42': {}
 
-  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.5(@types/node@22.0.0)))(svelte@4.2.18)(vite@5.4.5(@types/node@22.0.0))':
+  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.6(@types/node@22.0.0)))(svelte@4.2.18)(vite@5.4.6(@types/node@22.0.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.4.5(@types/node@22.0.0))
+      '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.4.6(@types/node@22.0.0))
       debug: 4.3.6
       svelte: 4.2.18
-      vite: 5.4.5(@types/node@22.0.0)
+      vite: 5.4.6(@types/node@22.0.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.5(@types/node@22.0.0))':
+  '@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.6(@types/node@22.0.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.5(@types/node@22.0.0)))(svelte@4.2.18)(vite@5.4.5(@types/node@22.0.0))
+      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.4.6(@types/node@22.0.0)))(svelte@4.2.18)(vite@5.4.6(@types/node@22.0.0))
       debug: 4.3.6
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.10
       svelte: 4.2.18
       svelte-hmr: 0.16.0(svelte@4.2.18)
-      vite: 5.4.5(@types/node@22.0.0)
-      vitefu: 0.2.5(vite@5.4.5(@types/node@22.0.0))
+      vite: 5.4.6(@types/node@22.0.0)
+      vitefu: 0.2.5(vite@5.4.6(@types/node@22.0.0))
     transitivePeerDependencies:
       - supports-color
 
@@ -3981,13 +3981,13 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@unocss/astro@0.59.4(rollup@4.21.3)(vite@5.4.5(@types/node@22.0.0))':
+  '@unocss/astro@0.59.4(rollup@4.21.3)(vite@5.4.6(@types/node@22.0.0))':
     dependencies:
       '@unocss/core': 0.59.4
       '@unocss/reset': 0.59.4
-      '@unocss/vite': 0.59.4(rollup@4.21.3)(vite@5.4.5(@types/node@22.0.0))
+      '@unocss/vite': 0.59.4(rollup@4.21.3)(vite@5.4.6(@types/node@22.0.0))
     optionalDependencies:
-      vite: 5.4.5(@types/node@22.0.0)
+      vite: 5.4.6(@types/node@22.0.0)
     transitivePeerDependencies:
       - rollup
 
@@ -4118,7 +4118,7 @@ snapshots:
     dependencies:
       '@unocss/core': 0.59.4
 
-  '@unocss/vite@0.59.4(rollup@4.21.3)(vite@5.4.5(@types/node@22.0.0))':
+  '@unocss/vite@0.59.4(rollup@4.21.3)(vite@5.4.6(@types/node@22.0.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@rollup/pluginutils': 5.1.0(rollup@4.21.3)
@@ -4130,7 +4130,7 @@ snapshots:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.10
-      vite: 5.4.5(@types/node@22.0.0)
+      vite: 5.4.6(@types/node@22.0.0)
     transitivePeerDependencies:
       - rollup
 
@@ -4285,8 +4285,8 @@ snapshots:
       tsconfck: 3.1.3(typescript@5.5.4)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 5.4.5(@types/node@22.0.0)
-      vitefu: 1.0.2(vite@5.4.5(@types/node@22.0.0))
+      vite: 5.4.6(@types/node@22.0.0)
+      vitefu: 1.0.2(vite@5.4.6(@types/node@22.0.0))
       which-pm: 3.0.0
       xxhash-wasm: 1.0.2
       yargs-parser: 21.1.1
@@ -4519,7 +4519,7 @@ snapshots:
   css-tree@2.2.1:
     dependencies:
       mdn-data: 2.0.28
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   css-tree@2.3.1:
     dependencies:
@@ -6195,7 +6195,7 @@ snapshots:
       css-select: 5.1.0
       css-tree: 2.3.1
       csso: 5.0.5
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   tar@6.2.1:
     dependencies:
@@ -6296,9 +6296,9 @@ snapshots:
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
 
-  unocss@0.59.4(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.5(@types/node@22.0.0)):
+  unocss@0.59.4(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.6(@types/node@22.0.0)):
     dependencies:
-      '@unocss/astro': 0.59.4(rollup@4.21.3)(vite@5.4.5(@types/node@22.0.0))
+      '@unocss/astro': 0.59.4(rollup@4.21.3)(vite@5.4.6(@types/node@22.0.0))
       '@unocss/cli': 0.59.4(rollup@4.21.3)
       '@unocss/core': 0.59.4
       '@unocss/extractor-arbitrary-variants': 0.59.4
@@ -6317,9 +6317,9 @@ snapshots:
       '@unocss/transformer-compile-class': 0.59.4
       '@unocss/transformer-directives': 0.59.4
       '@unocss/transformer-variant-group': 0.59.4
-      '@unocss/vite': 0.59.4(rollup@4.21.3)(vite@5.4.5(@types/node@22.0.0))
+      '@unocss/vite': 0.59.4(rollup@4.21.3)(vite@5.4.6(@types/node@22.0.0))
     optionalDependencies:
-      vite: 5.4.5(@types/node@22.0.0)
+      vite: 5.4.6(@types/node@22.0.0)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -6329,7 +6329,7 @@ snapshots:
     dependencies:
       browserslist: 4.23.2
       escalade: 3.1.2
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   util-deprecate@1.0.2: {}
 
@@ -6354,7 +6354,7 @@ snapshots:
       '@types/unist': 3.0.2
       vfile-message: 4.0.2
 
-  vite-plugin-solid@2.10.2(solid-js@1.8.19)(vite@5.4.5(@types/node@22.0.0)):
+  vite-plugin-solid@2.10.2(solid-js@1.8.19)(vite@5.4.6(@types/node@22.0.0)):
     dependencies:
       '@babel/core': 7.24.9
       '@types/babel__core': 7.20.5
@@ -6362,12 +6362,12 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.8.19
       solid-refresh: 0.6.3(solid-js@1.8.19)
-      vite: 5.4.5(@types/node@22.0.0)
-      vitefu: 0.2.5(vite@5.4.5(@types/node@22.0.0))
+      vite: 5.4.6(@types/node@22.0.0)
+      vitefu: 0.2.5(vite@5.4.6(@types/node@22.0.0))
     transitivePeerDependencies:
       - supports-color
 
-  vite@5.4.5(@types/node@22.0.0):
+  vite@5.4.6(@types/node@22.0.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
@@ -6376,13 +6376,13 @@ snapshots:
       '@types/node': 22.0.0
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.4.5(@types/node@22.0.0)):
+  vitefu@0.2.5(vite@5.4.6(@types/node@22.0.0)):
     optionalDependencies:
-      vite: 5.4.5(@types/node@22.0.0)
+      vite: 5.4.6(@types/node@22.0.0)
 
-  vitefu@1.0.2(vite@5.4.5(@types/node@22.0.0)):
+  vitefu@1.0.2(vite@5.4.6(@types/node@22.0.0)):
     optionalDependencies:
-      vite: 5.4.5(@types/node@22.0.0)
+      vite: 5.4.6(@types/node@22.0.0)
 
   web-namespaces@2.0.1: {}
 
