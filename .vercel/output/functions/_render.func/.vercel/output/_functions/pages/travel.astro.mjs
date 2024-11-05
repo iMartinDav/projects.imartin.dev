@@ -1,9 +1,8 @@
 /* empty css                                  */
-import { a as createComponent, r as renderTemplate, b as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_bMn8tCat.mjs';
-import 'kleur/colors';
-import { G as GlobeComponent } from '../chunks/Globe_Dl9Y4lTy.mjs';
-import { $ as $$BasicLayout } from '../chunks/Icon_BNfNYvvF.mjs';
-import { $ as $$Navbar } from '../chunks/Navbar_CISsp3sU.mjs';
+import { a as createComponent, r as renderTemplate, b as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_Fo31Ezp-.mjs';
+import { G as GlobeComponent } from '../chunks/Globe_D7RVIoOX.mjs';
+import { $ as $$BasicLayout } from '../chunks/Icon_IB9rjt9H.mjs';
+import { $ as $$Navbar } from '../chunks/Navbar_CJ63QA8x.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Travel = createComponent(($$result, $$props, $$slots) => {

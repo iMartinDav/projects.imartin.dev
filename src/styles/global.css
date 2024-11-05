@@ -6,38 +6,37 @@
   font-display: swap;
 }
 
-
 :root {
-  --color-gray-50: #FAFAFA;
-  --color-gray-100: #F5F5F5;
-  --color-gray-200: #E5E5E5;
-  --color-gray-300: #D4D4D4;
-  --color-gray-400: #A3A3A3;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
   --color-gray-500: #737373;
   --color-gray-600: #525252;
   --color-gray-700: #404040;
   --color-gray-800: #262626;
   --color-gray-900: #171717;
 
-  --color-darkslate-50: #3D2A3D;
-  --color-darkslate-100: #2C1E2C;
-  --color-darkslate-200: #261A26;
+  --color-darkslate-50: #3d2a3d;
+  --color-darkslate-100: #2c1e2c;
+  --color-darkslate-200: #261a26;
   --color-darkslate-300: #201620;
-  --color-darkslate-400: #1E0A1E;
+  --color-darkslate-400: #1e0a1e;
   --color-darkslate-500: #170817;
   --color-darkslate-600: #140714;
   --color-darkslate-700: #110611;
-  --color-darkslate-800: #0E050E;
-  --color-darkslate-900: #0B040B;
+  --color-darkslate-800: #0e050e;
+  --color-darkslate-900: #0b040b;
 
-  --color-primary-100: #F9CDD3;
-  --color-primary-200: #F3A3AA;
-  --color-primary-300: #EC7981;
-  --color-primary-400: #E64F59;
-  --color-primary-500: #E63946;
-  --color-primary-600: #CF2F3D;
-  --color-primary-700: #B82534;
-  --color-primary-800: #A01B2B;
+  --color-primary-100: #f9cdd3;
+  --color-primary-200: #f3a3aa;
+  --color-primary-300: #ec7981;
+  --color-primary-400: #e64f59;
+  --color-primary-500: #e63946;
+  --color-primary-600: #cf2f3d;
+  --color-primary-700: #b82534;
+  --color-primary-800: #a01b2b;
   --color-primary-900: #891321;
 
   --color-purple-100: #faf5ff;
@@ -51,18 +50,15 @@
   --color-purple-900: #581c87;
   --color-purple-950: #581c87;
 
-
-
   --color-teal-50: #f0fdfa;
   --color-teal-100: #ccfbf1;
   --color-teal-200: #99f6e4;
   --color-teal-300: #5eead4;
-  --color-teal-400: #00BFAE;
+  --color-teal-400: #00bfae;
   --color-teal-500: #14b8a6;
   --color-teal-600: #0d9488;
   --color-teal-700: #0f766e;
   --color-teal-800: #115e59;
   --color-teal-900: #134e4a;
   --color-teal-950: #042f2e;
-
 }

@@ -1,38 +1,38 @@
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import robotsTxt from "astro-robots-txt";
-import UnoCSS from "@unocss/astro";
-import icon from "astro-icon";
-import solidJs from "@astrojs/solid-js";
-import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
-import svelte from "@astrojs/svelte";
+import sitemap from '@astrojs/sitemap';
+import solidJs from '@astrojs/solid-js';
+import svelte from '@astrojs/svelte';
+import vercel from '@astrojs/vercel/serverless';
+import UnoCSS from '@unocss/astro';
 
-import vercel from "@astrojs/vercel/serverless";
+import { remarkReadingTime } from './src/lib/ remark-reading-time.mjs';
+import icon from 'astro-icon';
+import robotsTxt from 'astro-robots-txt';
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://projects.imartin.dev/",
+  site: 'https://projects.imartin.dev/',
   integrations: [
     sitemap(),
     robotsTxt({
       sitemap: [
-        "https://projects.imartin.dev/sitemap-index.xml",
-        "https://projects.imartin.dev/sitemap-0.xml",
-      ],
+        'https://projects.imartin.dev/sitemap-index.xml',
+        'https://projects.imartin.dev/sitemap-0.xml'
+      ]
     }),
     solidJs(),
     UnoCSS({
-      injectReset: true,
+      injectReset: true
     }),
     icon(),
-    svelte(),
+    svelte()
   ],
   markdown: {
-    remarkPlugins: [remarkReadingTime],
+    remarkPlugins: [remarkReadingTime]
   },
-  output: "server",
+  output: 'server',
   adapter: vercel(),
   vite: {
-    assetsInclude: "**/*.riv",
-  },
+    assetsInclude: '**/*.riv'
+  }
 });

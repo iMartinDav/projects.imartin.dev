@@ -1,10 +1,8 @@
 /* empty css                                  */
-import { c as createAstro, a as createComponent, r as renderTemplate, e as addAttribute, b as renderComponent, m as maybeRenderHead, g as renderTransition, h as fade } from '../chunks/astro/server_bMn8tCat.mjs';
-import 'kleur/colors';
-import { g as getCollection } from '../chunks/_astro_content_C19ef6d_.mjs';
-import { $ as $$PostFeedLayout } from '../chunks/PostFeedLayout_jFwqOZjW.mjs';
+import { c as createAstro, a as createComponent, r as renderTemplate, e as addAttribute, b as renderComponent, m as maybeRenderHead, g as renderTransition, h as fade } from '../chunks/astro/server_Fo31Ezp-.mjs';
+import { g as getCollection } from '../chunks/_astro_content_CF6XHS_F.mjs';
+import { $ as $$PostFeedLayout } from '../chunks/PostFeedLayout_DxjnbDj8.mjs';
 /* empty css                                 */
-import 'clsx';
 /* empty css                                 */
 /* empty css                                           */
 export { renderers } from '../renderers.mjs';
@@ -15,7 +13,7 @@ const $$ViewTransitions = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$ViewTransitions;
   const { fallback = "animate" } = Astro2.props;
   return renderTemplate`<meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback"${addAttribute(fallback, "content")}>`;
-}, "/Users/martindavila/Developer/projects-imartin.dev/node_modules/.pnpm/astro@4.15.6_@types+node@22.0.0_rollup@4.21.3_typescript@5.5.4/node_modules/astro/components/ViewTransitions.astro", void 0);
+}, "/Users/martindavila/Developer/projects-imartin.dev/node_modules/.pnpm/astro@4.16.9_@types+node@22.9.0_rollup@4.24.4_typescript@5.5.4/node_modules/astro/components/ViewTransitions.astro", void 0);
 
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const posts = (await getCollection("posts"))?.sort(

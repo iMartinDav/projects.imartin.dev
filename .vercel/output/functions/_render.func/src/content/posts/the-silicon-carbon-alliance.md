@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/PostLayout.astro"
+layout: '../../layouts/PostLayout.astro'
 pubDate: 2024-6-11T12:00:00Z
 title: The Silicon-Carbon Alliance How Software is Revolutionizing Genomics
 description: Exploring the groundbreaking synergy between cutting-edge software development and modern genomics research.

@@ -6,7 +6,7 @@ interface ImportMetaEnv {
   readonly CONTENTFUL_PREVIEW_TOKEN: string;
 }
 
-declare module "*.riv" {
+declare module '*.riv' {
   const content: any;
   export default content;
 }

@@ -1,8 +1,6 @@
 // Outputs: /builtwith.json
 
-
-
-export async function GET({params, request}: {params: any, request: any}) {
+export async function GET({ params, request }: { params: any; request: any }) {
   return new Response(
     JSON.stringify({
       msg: 'Hello World!',
@@ -12,9 +10,9 @@ export async function GET({params, request}: {params: any, request: any}) {
       endpoints: [
         '/api/v1/hello.json',
         '/api/v1/fetchNowFeed.json',
-        '/api/v1/fetchProjectsFeed.json',
+        '/api/v1/fetchProjectsFeed.json'
       ],
-      status: 200,
+      status: 200
     })
-  )
+  );
 }

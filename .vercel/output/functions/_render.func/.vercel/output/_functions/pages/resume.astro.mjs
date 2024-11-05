@@ -1,7 +1,5 @@
 /* empty css                                  */
-import { a as createComponent, r as renderTemplate, f as renderHead } from '../chunks/astro/server_bMn8tCat.mjs';
-import 'kleur/colors';
-import 'clsx';
+import { a as createComponent, r as renderTemplate, f as renderHead } from '../chunks/astro/server_Fo31Ezp-.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Resume = createComponent(($$result, $$props, $$slots) => {

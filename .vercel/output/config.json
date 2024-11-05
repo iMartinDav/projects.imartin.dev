@@ -48,10 +48,6 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^\\/tags(?:\\/(.*?))?\\/?$",
-			"dest": "_render"
-		},
-		{
 			"src": "^\\/travel\\/?$",
 			"dest": "_render"
 		},

@@ -1,13 +1,11 @@
 /* empty css                                  */
-import { c as createAstro, a as createComponent, r as renderTemplate, b as renderComponent, d as renderSlot, m as maybeRenderHead, F as Fragment, e as addAttribute } from '../chunks/astro/server_bMn8tCat.mjs';
-import 'kleur/colors';
-import { $ as $$BasicLayout, a as $$Icon } from '../chunks/Icon_BNfNYvvF.mjs';
-import { g as getCollection } from '../chunks/_astro_content_C19ef6d_.mjs';
-import 'clsx';
+import { c as createAstro, a as createComponent, r as renderTemplate, b as renderComponent, d as renderSlot, m as maybeRenderHead, F as Fragment, e as addAttribute } from '../chunks/astro/server_Fo31Ezp-.mjs';
+import { $ as $$BasicLayout, a as $$Icon } from '../chunks/Icon_IB9rjt9H.mjs';
+import { g as getCollection } from '../chunks/_astro_content_CF6XHS_F.mjs';
 import { ssr, ssrHydrationKey, escape, createComponent as createComponent$1 } from 'solid-js/web';
 import { createSignal, Show } from 'solid-js';
 import { b as formatTimeForLosAngeles, g as getCurrentTimeInLosAngeles } from '../chunks/helpers_IQzZvkDr.mjs';
-import { G as GlobeComponent } from '../chunks/Globe_Dl9Y4lTy.mjs';
+import { G as GlobeComponent } from '../chunks/Globe_D7RVIoOX.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
@@ -61,7 +59,7 @@ const LINKS = {
   email: "aldntmi@gmail.com"
 };
 
-var _tmpl$ = ["<div", ' class="absolute shadow-lg left-1/2 -translate-x-1/2 -translate-y-26 w-auto max-h-[70px] py-2 px-4 bg-purple-600 text-white text-center rounded-lg z-10 whitespace-normal"><p class="w-max">', "</p></div>"], _tmpl$2 = ["<div", ' class="relative inline-block"><div>', "</div><!--$-->", "<!--/--></div>"];
+var _tmpl$ = ["<div", ' class="-translate-y-26 absolute left-1/2 z-10 max-h-[70px] w-auto -translate-x-1/2 whitespace-normal rounded-lg bg-purple-600 px-4 py-2 text-center text-white shadow-lg"><p class="w-max">', "</p></div>"], _tmpl$2 = ["<div", ' class="relative inline-block"><div>', "</div><!--$-->", "<!--/--></div>"];
 function Tooltip(props) {
   const [isVisible, setIsVisible] = createSignal(false);
   const [clickCount, setClickCount] = createSignal(0);

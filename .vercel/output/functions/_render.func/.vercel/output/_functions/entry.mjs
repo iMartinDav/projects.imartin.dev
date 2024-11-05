@@ -1,7 +1,6 @@
 import { renderers } from './renderers.mjs';
-import { c as createExports } from './chunks/entrypoint_BCNrxJKs.mjs';
-import { manifest } from './manifest_B6qrPzQ1.mjs';
-import { onRequest } from './_noop-middleware.mjs';
+import { c as createExports } from './chunks/entrypoint_03RMNxPw.mjs';
+import { manifest } from './manifest_CLiE_2nu.mjs';
 
 const _page0 = () => import('./pages/_image.astro.mjs');
 const _page1 = () => import('./pages/api/v1/fetchnowfeed.json.astro.mjs');
@@ -19,7 +18,7 @@ const _page12 = () => import('./pages/travel.astro.mjs');
 const _page13 = () => import('./pages/index.astro.mjs');
 
 const pageMap = new Map([
-    ["node_modules/.pnpm/astro@4.15.6_@types+node@22.0.0_rollup@4.21.3_typescript@5.5.4/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
+    ["node_modules/.pnpm/astro@4.16.9_@types+node@22.9.0_rollup@4.24.4_typescript@5.5.4/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
     ["src/pages/api/v1/fetchNowFeed/index.json.ts", _page1],
     ["src/pages/api/v1/fetchProjectsFeed/index.json.ts", _page2],
     ["src/pages/api/v1/hello/index.json.ts", _page3],
@@ -35,15 +34,14 @@ const pageMap = new Map([
     ["src/pages/index.astro", _page13]
 ]);
 const serverIslandMap = new Map();
-
 const _manifest = Object.assign(manifest, {
     pageMap,
     serverIslandMap,
     renderers,
-    middleware: onRequest
+    middleware: () => import('./_noop-middleware.mjs')
 });
 const _args = {
-    "middlewareSecret": "89f76aec-0cfe-4e28-9c46-63b3e283ff68",
+    "middlewareSecret": "4072a908-f928-4145-af18-3a403369c912",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);
