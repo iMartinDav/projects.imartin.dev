@@ -17,6 +17,7 @@ interface Post {
     pubDate: string;
     tags: string[];
     image: string;
+    author: string;
   };
 }
 
@@ -65,6 +66,7 @@ for (const post of allPosts) {
       const postDescription = String(post.data.description);
       const postPubDate = String(post.data.pubDate);
       const postImage = String(post.data.image);
+      const postAuthor = String(post.data.author || 'Default Author');
 
       const newPost: Post = {
         slug: postSlug,
@@ -75,6 +77,7 @@ for (const post of allPosts) {
           pubDate: postPubDate,
           tags: tags,
           image: postImage,
+          author: postAuthor,
         },
       };
 
@@ -89,36 +92,35 @@ pageObjects.sort((a, b) => {
   );
 });
 
-let search: string = "";
-let filteredPosts: Post[] = pageObjects;
-
-function handleSearch(event: Event) {
-  const inputElement = event.target as HTMLInputElement;
-  search = inputElement.value.toLowerCase();
-
-  filteredPosts = pageObjects.filter((post) =>
-    post.data.title.toLowerCase().includes(search)
-  );
-}
-const Content = filteredPosts.map((post) => post);
+const Content = pageObjects;
 ---
 
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
+<script is:inline>
+  // Load GSAP from CDN
+  import 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+  import 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+</script>
 
-  const animatePosts = () => {
-    const posts = document.querySelectorAll(".post-item");
-    posts.forEach((post) => {
+<script>
+  declare const gsap: any;
+  declare const ScrollTrigger: any;
+
+  function initAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const posts = document.querySelectorAll<HTMLElement>('.post-item');
+    posts.forEach((post, index) => {
       gsap.fromTo(
         post,
-        { opacity: 0, y: 20 },
+        { 
+          opacity: 0, 
+          y: 20 
+        },
         {
           opacity: 1,
           y: 0,
           duration: 0.25,
-          delay: 0.1,
+          delay: index * 0.1,
           scrollTrigger: {
             trigger: post,
             start: "top 95%",
@@ -127,19 +129,21 @@ const Content = filteredPosts.map((post) => post);
         }
       );
     });
-  };
+  }
 
-  document.addEventListener("DOMContentLoaded", animatePosts);
+  // Initialize animations when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimations);
+  } else {
+    initAnimations();
+  }
 </script>
 
 <div>
   <TagsLayout title="projects.imartin.dev : tags" description="" />
-
   <Navbar />
 
-  <div
-    class="w-screen h-full flex flex-col justify-start items-start max-w-2xl mx-auto p-2 md:py-5"
-  >
+  <div class="w-screen h-full flex flex-col justify-start items-start max-w-2xl mx-auto p-2 md:py-5">
     <h1 class="text-5xl f-bold mb-2 text-neutral-100">
       <a href={`/tags`} class="f-light text-neutral-100/70">tag:</a>
       #{formatTag(tagParam)}
@@ -155,13 +159,12 @@ const Content = filteredPosts.map((post) => post);
               <PostItem
                 title={post.data.title || "No title"}
                 description={post.data.description || "No description"}
-                date={
-                  post.data.pubDate ? new Date(post.data.pubDate) : new Date()
-                }
+                date={post.data.pubDate ? new Date(post.data.pubDate) : new Date()}
                 url={post.slug}
                 category={post.data.category || "No category"}
                 tags={post.data.tags || []}
                 image={post.data.image || ""}
+                author={post.data.author || "Default Author"}
               />
             </div>
           ))
