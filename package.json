@@ -40,6 +40,7 @@
     "mdast-util-to-string": "^4.0.0",
     "motion": "^10.18.0",
     "reading-time": "^1.5.0",
+    "rimraf": "^6.0.1",
     "solid-js": "^1.9.3",
     "svelte": "^4.2.19"
   },
