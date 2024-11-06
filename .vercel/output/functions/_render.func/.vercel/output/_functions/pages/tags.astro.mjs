@@ -1,6 +1,6 @@
 /* empty css                                  */
 import { c as createAstro, a as createComponent, r as renderTemplate, e as addAttribute, b as renderComponent, m as maybeRenderHead, g as renderTransition, h as fade } from '../chunks/astro/server_Fo31Ezp-.mjs';
-import { g as getCollection } from '../chunks/_astro_content_CF6XHS_F.mjs';
+import { g as getCollection } from '../chunks/_astro_content_BXrMCoEW.mjs';
 import { $ as $$PostFeedLayout } from '../chunks/PostFeedLayout_DxjnbDj8.mjs';
 /* empty css                                 */
 /* empty css                                 */

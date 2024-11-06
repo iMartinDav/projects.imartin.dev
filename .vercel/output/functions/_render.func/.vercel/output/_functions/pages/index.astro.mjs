@@ -1,7 +1,7 @@
 /* empty css                                  */
 import { c as createAstro, a as createComponent, r as renderTemplate, b as renderComponent, d as renderSlot, m as maybeRenderHead, F as Fragment, e as addAttribute } from '../chunks/astro/server_Fo31Ezp-.mjs';
 import { $ as $$BasicLayout, a as $$Icon } from '../chunks/Icon_IB9rjt9H.mjs';
-import { g as getCollection } from '../chunks/_astro_content_CF6XHS_F.mjs';
+import { g as getCollection } from '../chunks/_astro_content_BXrMCoEW.mjs';
 import { ssr, ssrHydrationKey, escape, createComponent as createComponent$1 } from 'solid-js/web';
 import { createSignal, Show } from 'solid-js';
 import { b as formatTimeForLosAngeles, g as getCurrentTimeInLosAngeles } from '../chunks/helpers_IQzZvkDr.mjs';
