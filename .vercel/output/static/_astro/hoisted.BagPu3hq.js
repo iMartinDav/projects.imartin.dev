@@ -1,1 +1,0 @@
-import{t as e}from"./index.es.B26ups-i.js";import"./ScrollIndicator.astro_astro_type_script_index_0_lang.gSLdaUf6.js";const n=[[".loaderRef",{opacity:[1,0],pointerEvents:"none"},{easing:"ease-out",duration:2}]];e(n);const o=[[".loaderRef",{opacity:[1,0],pointerEvents:"none"},{easing:"ease-out"}]];e(o);

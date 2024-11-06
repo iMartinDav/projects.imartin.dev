@@ -1,1 +1,0 @@
-window.addEventListener("scroll",()=>{const o=window.scrollY,e=document.documentElement.scrollHeight-document.documentElement.clientHeight,c=o/e*100,t=document.getElementById("scroll-indicator");t&&(t.style.width=c+"%")});
