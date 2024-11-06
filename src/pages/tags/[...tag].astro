@@ -25,7 +25,6 @@ type TagRoute = {
   };
 };
 
-// Obtiene las rutas estáticas basadas en las etiquetas
 export async function getStaticPaths(): Promise<TagRoute[]> {
   const posts = await getCollection("posts");
   const tagSet = new Set<string>();
@@ -59,57 +58,67 @@ for (const post of allPosts) {
     const processedTags = tags.map((tag) => formatTag(tag));
 
     if (processedTags.includes(formatTag(tagParam))) {
+      const postTitle = String(post.data.title);
+      const postSlug = formatTag(postTitle);
+      const postCategory = String(post.data.category);
+      const postDescription = String(post.data.description);
+      const postPubDate = String(post.data.pubDate);
+      const postImage = String(post.data.image);
+
       const newPost: Post = {
-        slug: post.slug,
+        slug: postSlug,
         data: {
-          title: post.data.title || "No title",
-          description: post.data.description || "No description",
-          category: post.data.category || "No category",
-          pubDate: post.data.pubDate || new Date().toISOString(),
+          title: postTitle,
+          description: postDescription,
+          category: postCategory,
+          pubDate: postPubDate,
           tags: tags,
-          image: post.data.image || "",
-          author: post.data.author || "Default Author",
+          image: postImage,
+          author: String(post.data.author),
         },
       };
+
       pageObjects.push(newPost);
     }
   }
 }
 
-// Ordena los posts por fecha de publicación
 pageObjects.sort((a, b) => {
   return (
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
 });
 
-const Content = pageObjects;
+let search: string = "";
+let filteredPosts: Post[] = pageObjects;
+
+function handleSearch(event: Event) {
+  const inputElement = event.target as HTMLInputElement;
+  search = inputElement.value.toLowerCase();
+
+  filteredPosts = pageObjects.filter((post) =>
+    post.data.title.toLowerCase().includes(search)
+  );
+}
+const Content = filteredPosts.map((post) => post);
 ---
 
-<script is:inline>
-  // Carga de GSAP y ScrollTrigger
-  import 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
-  import 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
 
-  const gsap = window.gsap;
-  const ScrollTrigger = window.ScrollTrigger;
-
-  function initAnimations() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const posts = document.querySelectorAll<HTMLElement>('.post-item');
-    posts.forEach((post, index) => {
+  const animatePosts = () => {
+    const posts = document.querySelectorAll(".post-item");
+    posts.forEach((post) => {
       gsap.fromTo(
         post,
-        { 
-          opacity: 0, 
-          y: 20 
-        },
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
           y: 0,
           duration: 0.25,
-          delay: index * 0.1,
+          delay: 0.1,
           scrollTrigger: {
             trigger: post,
             start: "top 95%",
@@ -118,41 +127,42 @@ const Content = pageObjects;
         }
       );
     });
-  }
+  };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAnimations);
-  } else {
-    initAnimations();
-  }
+  document.addEventListener("DOMContentLoaded", animatePosts);
 </script>
 
 <div>
-  <TagsLayout title="projects.imartin.dev : tags" description="" />
+  <TagsLayout title="engage-bento: tags" description="" />
+
   <Navbar />
 
-  <div class="w-screen h-full flex flex-col justify-start items-start max-w-2xl mx-auto p-2 md:py-5">
-    <h1 class="text-5xl font-bold mb-2 text-neutral-100">
-      <a href={`/tags`} class="font-light text-neutral-100/70">tag:</a>
+  <div
+    class="w-screen h-full flex flex-col justify-start items-start max-w-2xl mx-auto p-2 md:py-5"
+  >
+    <h1 class="text-5xl f-bold mb-2 text-neutral-100">
+      <a href={`/tags`} class="f-light text-neutral-100/70">tag:</a>
       #{formatTag(tagParam)}
     </h1>
-    <div class="font-light mb-4 text-neutral-100/50">
+    <div class="f-light mb-4 text-neutral-100/50">
       Other posts tagged with "{tagParam}".
     </div>
     <div class="w-full">
-      <ul>
+      <ul class="">
         {
           Content.map((post) => (
             <div class="post-item opacity-0">
               <PostItem
-                title={post.data.title}
-                description={post.data.description}
-                date={post.data.pubDate ? new Date(post.data.pubDate) : new Date()}
+                title={post.data.title || "No title"}
+                description={post.data.description || "No description"}
+                date={
+                  post.data.pubDate ? new Date(post.data.pubDate) : new Date()
+                }
                 url={post.slug}
-                category={post.data.category}
-                tags={post.data.tags}
-                image={post.data.image}
-                author={post.data.author}
+                category={post.data.category || "No category"}
+                tags={post.data.tags || []}
+                image={post.data.image || ""}
+                author={post.data.author || "Unknown author"}
               />
             </div>
           ))
