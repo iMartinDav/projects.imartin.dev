@@ -1,6 +1,4 @@
 ---
-export const prerender = true;
-
 import { type CollectionEntry, getCollection } from "astro:content";
 import { formatTag } from "../../lib/helpers";
 import "../../styles/global.css";
@@ -27,6 +25,7 @@ type TagRoute = {
   };
 };
 
+// Obtiene las rutas estáticas basadas en las etiquetas
 export async function getStaticPaths(): Promise<TagRoute[]> {
   const posts = await getCollection("posts");
   const tagSet = new Set<string>();
@@ -60,32 +59,24 @@ for (const post of allPosts) {
     const processedTags = tags.map((tag) => formatTag(tag));
 
     if (processedTags.includes(formatTag(tagParam))) {
-      const postTitle = String(post.data.title);
-      const postSlug = formatTag(postTitle);
-      const postCategory = String(post.data.category);
-      const postDescription = String(post.data.description);
-      const postPubDate = String(post.data.pubDate);
-      const postImage = String(post.data.image);
-      const postAuthor = String(post.data.author || 'Default Author');
-
       const newPost: Post = {
-        slug: postSlug,
+        slug: post.slug,
         data: {
-          title: postTitle,
-          description: postDescription,
-          category: postCategory,
-          pubDate: postPubDate,
+          title: post.data.title || "No title",
+          description: post.data.description || "No description",
+          category: post.data.category || "No category",
+          pubDate: post.data.pubDate || new Date().toISOString(),
           tags: tags,
-          image: postImage,
-          author: postAuthor,
+          image: post.data.image || "",
+          author: post.data.author || "Default Author",
         },
       };
-
       pageObjects.push(newPost);
     }
   }
 }
 
+// Ordena los posts por fecha de publicación
 pageObjects.sort((a, b) => {
   return (
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
@@ -96,18 +87,16 @@ const Content = pageObjects;
 ---
 
 <script is:inline>
-  // Load GSAP from CDN
+  // Carga de GSAP y ScrollTrigger
   import 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
   import 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
-</script>
 
-<script>
-  declare const gsap: any;
-  declare const ScrollTrigger: any;
+  const gsap = window.gsap;
+  const ScrollTrigger = window.ScrollTrigger;
 
   function initAnimations() {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const posts = document.querySelectorAll<HTMLElement>('.post-item');
     posts.forEach((post, index) => {
       gsap.fromTo(
@@ -131,7 +120,6 @@ const Content = pageObjects;
     });
   }
 
-  // Initialize animations when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAnimations);
   } else {
@@ -144,27 +132,27 @@ const Content = pageObjects;
   <Navbar />
 
   <div class="w-screen h-full flex flex-col justify-start items-start max-w-2xl mx-auto p-2 md:py-5">
-    <h1 class="text-5xl f-bold mb-2 text-neutral-100">
-      <a href={`/tags`} class="f-light text-neutral-100/70">tag:</a>
+    <h1 class="text-5xl font-bold mb-2 text-neutral-100">
+      <a href={`/tags`} class="font-light text-neutral-100/70">tag:</a>
       #{formatTag(tagParam)}
     </h1>
-    <div class="f-light mb-4 text-neutral-100/50">
+    <div class="font-light mb-4 text-neutral-100/50">
       Other posts tagged with "{tagParam}".
     </div>
     <div class="w-full">
-      <ul class="">
+      <ul>
         {
           Content.map((post) => (
             <div class="post-item opacity-0">
               <PostItem
-                title={post.data.title || "No title"}
-                description={post.data.description || "No description"}
+                title={post.data.title}
+                description={post.data.description}
                 date={post.data.pubDate ? new Date(post.data.pubDate) : new Date()}
                 url={post.slug}
-                category={post.data.category || "No category"}
-                tags={post.data.tags || []}
-                image={post.data.image || ""}
-                author={post.data.author || "Default Author"}
+                category={post.data.category}
+                tags={post.data.tags}
+                image={post.data.image}
+                author={post.data.author}
               />
             </div>
           ))
