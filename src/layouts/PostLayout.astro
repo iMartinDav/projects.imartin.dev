@@ -93,7 +93,7 @@ const { frontmatter } = Astro.props;
       <a href={frontmatter.projectURL || "hover:skew-y-12"}>
         <img
           src={frontmatter.image}
-          alt=""
+          alt={frontmatter.title || "Post image"}
           class="border border-gray-500/50 w-full object-cover h-full opacity-0"
           id="post-image"
         />

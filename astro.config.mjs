@@ -7,6 +7,7 @@ import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
+import rehypeSanitize from "rehype-sanitize";
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,6 +29,7 @@ export default defineConfig({
 	],
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
+		rehypePlugins: [rehypeSanitize],
 	},
 	output: "server",
 	adapter: vercel(),

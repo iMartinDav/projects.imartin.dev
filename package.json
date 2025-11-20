@@ -11,7 +11,10 @@
     "build": "node -v && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.ts,.astro,.svelte",
+    "lint:fix": "eslint . --ext .js,.ts,.astro,.svelte --fix",
+    "test": "vitest"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.14",
@@ -46,18 +49,25 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.5",
+    "@eslint/js": "^9.39.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/d3": "^7.4.3",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
     "@unocss/astro": "^66.5.9",
     "@unocss/postcss": "^66.5.9",
     "@unocss/preset-uno": "^66.5.9",
     "@unocss/reset": "^66.5.9",
     "autoprefixer": "^10.4.19",
+    "eslint": "^9.39.1",
+    "eslint-plugin-astro": "^1.5.0",
     "markdown-it": "^14.1.0",
     "motion": "^10.17.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "rehype-sanitize": "^6.0.0",
     "sanitize-html": "^2.17.0",
-    "unocss": "^66.5.9"
+    "unocss": "^66.5.9",
+    "vitest": "^4.0.12"
   }
 }

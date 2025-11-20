@@ -2,6 +2,8 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "skipLibCheck": true,
+    "strict": true,
+    "noImplicitAny": true,
     "types": ["gsap"]
   }
 }

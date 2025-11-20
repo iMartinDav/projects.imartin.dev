@@ -38,3 +38,4 @@ pnpm-debug.log*
 
 # Public assets that shouldn’t be tracked (e.g., resume PDFs)
 public/resume.pdf
+.vercel
