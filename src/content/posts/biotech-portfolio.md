@@ -1,5 +1,4 @@
 ---
-layout: '../../layouts/PostLayout.astro'
 pubDate: 2024-11-06T00:00:00Z
 title: BioTech Portfolio | Next.js 15
 description: Modern, high-performance portfolio platform integrated with projects.imartin.dev for showcases and blog content.

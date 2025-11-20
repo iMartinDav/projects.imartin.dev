@@ -1,5 +1,4 @@
 ---
-layout: '../../layouts/PostLayout.astro'
 pubDate: 2024-2-10T00:00:00Z
 title: Bioinfometrics
 description: Explore cutting-edge insights and data on biological sectors with Bioinfometrics. Our platform delivers unique perspectives on industry trends to keep you well-informed and ahead of the curve.
