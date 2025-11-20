@@ -1,7 +1,6 @@
 ---
-import Card from "./Card/index.astro";
 import { getCollection } from "astro:content";
-import { formatTimeForLosAngeles } from "../lib/helpers";
+import Card from "./Card/index.astro";
 
 // Fetch and filter posts that are in the 'now' category
 const allPosts = await getCollection("posts");
@@ -9,8 +8,8 @@ const nowPosts = allPosts.filter((post) => post.data.category === "projects");
 
 // Sort these posts by date in descending order
 nowPosts.sort(
-  (a, b) =>
-    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+	(a, b) =>
+		new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
 );
 
 // Take the first item from the sorted array as the most recent post
