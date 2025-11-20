@@ -32,6 +32,7 @@ export default defineConfig({
 		rehypePlugins: [rehypeSanitize],
 	},
 	output: "server",
+	compressHTML: true,
 	adapter: vercel(),
 	vite: {
 		assetsInclude: "**/*.riv",

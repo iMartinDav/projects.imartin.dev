@@ -48,6 +48,7 @@
     "svelte": "^5.43.13"
   },
   "devDependencies": {
+    "@astrojs/image": "^0.18.0",
     "@astrojs/ts-plugin": "^1.10.5",
     "@eslint/js": "^9.39.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
