@@ -1,21 +1,21 @@
 ---
-import { formatDate, formatTag } from "../lib/helpers";
 import type { MarkdownLayoutProps } from "astro";
-import BasicLayout from "./BasicLayout.astro";
 import { Icon } from "astro-icon/components";
 import Navbar from "../components/Navbar.astro";
+import { formatDate, formatTag } from "../lib/helpers";
+import BasicLayout from "./BasicLayout.astro";
 
 type Props = MarkdownLayoutProps<{
-  title: string;
-  category: string;
-  description: string;
-  pubDate: string;
-  minutesRead: string;
-  image: string;
-  projectURL: string;
-  repoURL: string;
-  tags: string[];
-  author: string;
+	title: string;
+	category: string;
+	description: string;
+	pubDate: string;
+	minutesRead: string;
+	image: string;
+	projectURL: string;
+	repoURL: string;
+	tags: string[];
+	author: string;
 }>;
 
 const { slug } = Astro.params;

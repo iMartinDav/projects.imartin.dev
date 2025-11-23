@@ -12,10 +12,9 @@ interface Props {
     description: string;
     pubDate: string;
     minutesRead: string;
+    image?: string;
   };
 }
-
-import { ViewTransitions } from "astro:transitions";
 
 const { title, description, page, slug, frontmatter } = Astro.props;
 const image =
@@ -139,12 +138,6 @@ const schema =
       defer
       src="https://analytics.us.umami.is/script.js"
       data-website-id="bbed5cef-21ca-4c29-a373-eb5ff4db704d"></script>
-
-    <style>
-      /* @view-transition {
-        navigation: auto;
-      } */
-    </style>
   </head>
 
   <body class="bg-darkslate-400 flex flex-col justify-center items-center">
@@ -221,5 +214,4 @@ const schema =
       list-style-type: decimal;
     }
   </style>
-  <ViewTransitions />
 </html>

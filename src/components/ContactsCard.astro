@@ -1,72 +1,76 @@
 ---
-import Card from "./Card/index.astro";
+import { Icon } from "astro-icon/components";
 import { LINKS } from "../lib/constants";
 import Button from "./Button.astro";
-import { Icon } from "astro-icon/components";
+import Card from "./Card/index.astro";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
-  <div class="h-full">
-    <header class="flex items-center">
-      <h1 class="text-white text-2xl font-bold">Let’s Connect and Innovate!</h1>
-    </header>
-    <div class="flex flex-col mt-4">
-      <div class="text-neutral-100/70">Reach Out</div>
-
-      <div class="w-full mt-2">
-        <a href={`mailto:${LINKS.email}`} aria-label="Email me">
-          <Button aria-label="Email me">
-            <div class="flex items-center gap-2">
-              <Icon name="ri:mail-fill" class="h-5 w-5" />
-              <div>Send a Message</div>
-              <span class="sr-only">Send a Message</span>
-            </div>
-          </Button>
-        </a>
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-7">
+  <div class="h-full flex flex-col justify-center px-2 py-4">
+    <div class="space-y-3">
+      <!-- Main Title -->
+      <div>
+        <h1 class="text-white text-2xl font-bold leading-tight">
+          Let's Connect<br />
+          <span class="text-blue-400">and Innovate!</span>
+        </h1>
+        <p class="text-neutral-100/60 text-xs leading-relaxed mt-1">
+          Ready to collaborate on groundbreaking bioinformatics solutions
+        </p>
       </div>
-      <div class="flex flex-col mt-4 w-full">
-        <h2 class="text-neutral-100/70">Connect with Me</h2>
-        <div class="flex flex-col gap-1 w-full">
-          <div>
-            <a
-              href={LINKS.linkedin}
-              target="_blank"
-              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
-            >
-              <Icon name="ri:linkedin-fill" class="h-5 w-5" />
-              <div>Let’s Network</div>
-            </a>
-          </div>
-          <div>
-            <a
-              href={LINKS.github}
-              target="_blank"
-              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
-            >
-              <Icon name="ri:github-fill" class="h-5 w-5" />
-              <div>Explore My Projects</div>
-            </a>
-          </div>
-          <div>
-            <a
-              href={LINKS.twitter}
-              target="_blank"
-              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
-            >
-              <Icon name="ri:twitter-x-fill" class="h-5 w-5" />
-              <div>Follow the Latest</div>
-            </a>
-          </div>
-          <div>
-            <a
-              href={LINKS.discord}
-              target="_blank"
-              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
-            >
-              <Icon name="ri:discord-fill" class="h-5 w-5" />
-              <div>Join the Conversation</div>
-            </a>
-          </div>
+
+      <!-- Reach Out Section -->
+      <div class="space-y-1.5">
+        <h2 class="text-neutral-100/80 text-sm font-semibold">Reach Out</h2>
+        <div class="w-full">
+          <a href={`mailto:${LINKS.email}`} aria-label="Email me" class="block">
+            <Button aria-label="Email me">
+              <div class="flex items-center gap-2">
+                <Icon name="ri:mail-fill" class="h-5 w-5" />
+                <div class="text-sm font-medium">Send a Message</div>
+                <span class="sr-only">Send a Message</span>
+              </div>
+            </Button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Connect Section -->
+      <div class="space-y-1.5">
+        <h2 class="text-neutral-100/80 text-sm font-semibold">Connect with Me</h2>
+                <div class="grid grid-cols-1 gap-1">
+          <a
+            href={LINKS.linkedin}
+            target="_blank"
+            class="flex items-center gap-2 p-2 border border-darkslate-100 md:hover:border-blue-400/50 md:hover:bg-blue-400/5 transition-all duration-300 rounded-lg group"
+          >
+            <Icon name="ri:linkedin-fill" class="h-4 w-4 text-blue-400 group-hover:scale-110 transition-transform" />
+            <div class="font-medium text-xs">Let's Network</div>
+          </a>
+          <a
+            href={LINKS.github}
+            target="_blank"
+            class="flex items-center gap-2 p-2 border border-darkslate-100 md:hover:border-gray-400/50 md:hover:bg-gray-400/5 transition-all duration-300 rounded-lg group"
+          >
+            <Icon name="ri:github-fill" class="h-4 w-4 group-hover:scale-110 transition-transform" />
+            <div class="font-medium text-xs">Explore My Projects</div>
+          </a>
+          <a
+            href={LINKS.twitter}
+            target="_blank"
+            class="flex items-center gap-2 p-2 border border-darkslate-100 md:hover:border-blue-300/50 md:hover:bg-blue-300/5 transition-all duration-300 rounded-lg group"
+          >
+            <Icon name="ri:twitter-fill" class="h-4 w-4 text-blue-300 group-hover:scale-110 transition-transform" />
+            <div class="font-medium text-xs">Follow the Latest</div>
+          </a>
+          <a
+            href={LINKS.discord}
+            target="_blank"
+            class="flex items-center gap-2 p-2 border border-darkslate-100 md:hover:border-indigo-400/50 md:hover:bg-indigo-400/5 transition-all duration-300 rounded-lg group"
+          >
+            <Icon name="ri:discord-fill" class="h-4 w-4 text-indigo-400 group-hover:scale-110 transition-transform" />
+            <div class="font-medium text-xs">Join the Conversation</div>
+          </a>
         </div>
       </div>
     </div>

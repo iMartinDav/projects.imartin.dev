@@ -1,7 +1,7 @@
 ---
+import { getCollection } from "astro:content";
 import Card from "./Card/index.astro";
 import Pulse from "./Pulse.astro";
-import { getCollection } from "astro:content";
 
 // Fetch and filter posts that are in the 'biocode' category
 const allPosts = await getCollection("posts");
@@ -9,15 +9,15 @@ const nowPosts = allPosts.filter((post) => post.data.category === "biocode");
 
 // Sort these posts by date in descending order
 nowPosts.sort(
-  (a, b) =>
-    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+	(a, b) =>
+		new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
 );
 
 // Take the first item from the sorted array as the most recent post
 const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallback if no posts are found
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
   <div class="group">
     <div class="flex justify-between w-full items-start mb-2">
       <div class="flex flex-col w-full">
@@ -33,7 +33,7 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
         <Pulse />
       </div>
     </div>
-    <div class="line-clamp-3">
+    <div class="line-clamp-5">
       {
         mostRecentNowPost ? (
           <a

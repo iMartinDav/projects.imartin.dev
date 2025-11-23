@@ -6,8 +6,8 @@ import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
-import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 import rehypeSanitize from "rehype-sanitize";
+import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,6 +27,7 @@ export default defineConfig({
 		icon(),
 		svelte(),
 	],
+	viewTransitions: false,
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		rehypePlugins: [rehypeSanitize],
