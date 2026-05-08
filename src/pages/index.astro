@@ -11,7 +11,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <script>
-  import { spring, stagger, timeline, type TimelineDefinition } from "motion";
+  import { spring, stagger, animate } from "motion";
 import { loaderAnimation } from "../lib/constants";
   const cards = document.querySelectorAll(".card");
 
@@ -29,7 +29,7 @@ import { loaderAnimation } from "../lib/constants";
     ],
   ];
 
-  timeline(sequence as TimelineDefinition);
+  animate(sequence as any);
 </script>
 
 <Layout title="iMartin.dev: projects" description="">

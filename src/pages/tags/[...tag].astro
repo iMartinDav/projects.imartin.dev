@@ -68,7 +68,7 @@ for (const post of allPosts) {
 			const postImage = String(post.data.image);
 
 			const newPost: Post = {
-				slug: postSlug,
+				slug: post.id,
 				data: {
 					title: postTitle,
 					description: postDescription,

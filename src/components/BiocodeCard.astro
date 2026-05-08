@@ -37,7 +37,7 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
       {
         mostRecentNowPost ? (
           <a
-            href={`/${mostRecentNowPost.data.category}/${mostRecentNowPost.slug || "#default"}`}
+            href={`/${mostRecentNowPost.data.category}/${mostRecentNowPost.id || "#default"}`}
             target=""
             rel="noopener noreferrer"
             class="text-neutral-100 md:text-neutral-100/70 text-sm f-light group/newPost transition-colors duration-300"

@@ -28,7 +28,7 @@ const mostRecentProjectPost = nowPosts[0] || null; // This ensures there is a fa
       {
         mostRecentProjectPost ? (
           <a
-            href={`/${mostRecentProjectPost.data.category}/${mostRecentProjectPost.slug || "#default"}`}
+            href={`/${mostRecentProjectPost.data.category}/${mostRecentProjectPost.id || "#default"}`}
             target=""
             rel="noopener noreferrer"
             class="block group/link"
