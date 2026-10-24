@@ -41,16 +41,12 @@ $ cd astro-bento
 
 ```bash
 # Install dependencies
-$ pnpm install
-or
-$ npm install
+$ bun install
 ```
 
 ```bash
 # Start the project in development
-$ pnpm run dev
-or
-$ npm run dev
+$ bun dev
 ```
 
 ## Example Endpoint
@@ -74,7 +70,7 @@ Deploying your website on Vercel. it's optional but I reccomand it in order to d
 You just need to fork this repo and link it to your Vercel account.
 
 ```bash
-pnpm i @astrojs/vercel
-pnpm i -g vercel
+bun add @astrojs/vercel
+bun add -g vercel
 $ vercel
 ```
