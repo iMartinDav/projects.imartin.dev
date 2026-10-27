@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import { onCleanup, onMount } from 'solid-js';
 
 const GlobeComponent = () => {
-  let mapContainer: any;
+  let mapContainer: HTMLDivElement | undefined;
 
   const visitedCountries = [
     'France',
@@ -83,7 +83,7 @@ const GlobeComponent = () => {
       .data(worldData.features)
       .enter()
       .append('path')
-      .attr('d', (d: any) => pathGenerator(d))
+      .attr('d', (d) => pathGenerator(d as d3.GeoPermissibleObjects))
       .attr('fill', (d) =>
         visitedCountries.includes(d.properties.name) ? visitedColor : landColor
       )
@@ -95,7 +95,7 @@ const GlobeComponent = () => {
       const rotate = projection.rotate();
       const k = sensitivity / projection.scale();
       projection.rotate([rotate[0] - 1 * k, rotate[1]]);
-      svg.selectAll('path').attr('d', (d: any) => pathGenerator(d));
+      svg.selectAll('path').attr('d', (d) => pathGenerator(d as d3.GeoPermissibleObjects));
     }, 200);
   };
 

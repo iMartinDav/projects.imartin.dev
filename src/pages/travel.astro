@@ -5,9 +5,9 @@ import Navbar from "../components/Navbar.astro";
 ---
 
 <script>
-  import { animate } from "motion";
+  import { animate, type AnimationSequence } from "motion";
 
-  const sequence = [
+  const sequence: AnimationSequence = [
     [
       ".loaderRef",
       { opacity: [1, 0] },
@@ -15,7 +15,7 @@ import Navbar from "../components/Navbar.astro";
     ],
   ];
 
-  animate(sequence as any);
+  animate(sequence);
 </script>
 
 <BasicLayout

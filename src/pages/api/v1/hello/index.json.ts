@@ -1,6 +1,7 @@
-// Outputs: /builtwith.json
+// Outputs: /api/v1/hello.json
+import type { APIRoute } from 'astro';
 
-export async function GET({ params, request }: { params: any; request: any }) {
+export const GET: APIRoute = async () => {
   return new Response(
     JSON.stringify({
       msg: 'Hello World!',
@@ -15,4 +16,4 @@ export async function GET({ params, request }: { params: any; request: any }) {
       status: 200
     })
   );
-}
+};

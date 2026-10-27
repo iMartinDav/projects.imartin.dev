@@ -61,7 +61,6 @@ for (const post of allPosts) {
 
 		if (processedTags.includes(formatTag(tagParam))) {
 			const postTitle = String(post.data.title);
-			const postSlug = formatTag(postTitle);
 			const postCategory = String(post.data.category);
 			const postDescription = String(post.data.description);
 			const postPubDate = String(post.data.pubDate);
@@ -91,18 +90,7 @@ pageObjects.sort((a, b) => {
 	);
 });
 
-let search: string = "";
-let filteredPosts: Post[] = pageObjects;
-
-function handleSearch(event: Event) {
-	const inputElement = event.target as HTMLInputElement;
-	search = inputElement.value.toLowerCase();
-
-	filteredPosts = pageObjects.filter((post) =>
-		post.data.title.toLowerCase().includes(search),
-	);
-}
-const Content = filteredPosts.map((post) => post);
+const Content = pageObjects;
 ---
 
 <script>

@@ -4,6 +4,8 @@
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
     "types": ["gsap"]
   }
 }

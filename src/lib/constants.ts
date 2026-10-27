@@ -1,3 +1,5 @@
+import type { DOMSegmentWithTransition } from 'motion';
+
 export const LINKS = {
   github: 'https://github.com/iMartinDav',
   linkedin: 'https://www.linkedin.com/in/imartindav/',
@@ -6,7 +8,7 @@ export const LINKS = {
   email: 'aldntmi@gmail.com'
 };
 
-export const loaderAnimation = [
+export const loaderAnimation: DOMSegmentWithTransition = [
   '.loader',
   { opacity: [1, 0] },
   { ease: 'easeOut' }

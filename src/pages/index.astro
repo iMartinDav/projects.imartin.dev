@@ -11,11 +11,11 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <script>
-  import { spring, stagger, animate } from "motion";
-import { loaderAnimation } from "../lib/constants";
+  import { spring, stagger, animate, type AnimationSequence } from "motion";
+  import { loaderAnimation } from "../lib/constants";
   const cards = document.querySelectorAll(".card");
 
-  const sequence = [
+  const sequence: AnimationSequence = [
     loaderAnimation,
     [
       cards,
@@ -32,7 +32,7 @@ import { loaderAnimation } from "../lib/constants";
     ],
   ];
 
-  animate(sequence as any);
+  animate(sequence);
 </script>
 
 <Layout
