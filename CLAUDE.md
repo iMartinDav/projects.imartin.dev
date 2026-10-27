@@ -4,17 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-Package manager is **Bun** (`bun.lock`); Node >= 22.
+Package manager is **Bun** (`bun.lock`). Node 24 (`.nvmrc`) matches the Vercel runtime.
 
 ```bash
 bun install
 bun dev                       # astro dev on http://localhost:4321
 bun run build                 # astro build (Vercel adapter output)
 bun run preview
-bun run lint                  # eslint (.js,.ts,.astro,.svelte)
+bun run lint                  # eslint (flat config, browser + node globals)
 bun run lint:fix
 bun run format                # prettier --write .
 bun run test                  # vitest (watch mode)
+bunx tsc --noEmit -p .        # type-check .ts/.tsx (no @astrojs/check for .astro)
 bunx vitest run src/lib/helpers.test.ts   # single test file, no watch
 ```
 
@@ -29,11 +30,11 @@ Personal bento-style portfolio for projects.imartin.dev, built with **Astro** (`
   - `projects` → `ProjectsCard`, `/projects`, `/api/v1/fetchProjectsFeed.json`
   - `biocode` → `BiocodeCard`, `/biocode`
   - `now` → `/api/v1/fetchNowFeed.json`
-  Note that `/projects/[slug]` and `/biocode/[slug]` both generate pages for *all* posts regardless of category; only the index pages and cards filter. `/tags/[...tag]` groups by `tags`.
-- **Schema**: `image` and `author` are required; `minutesRead` is injected at build time by `src/lib/remark-reading-time.mjs` (registered in `astro.config.mjs`), so don't set it manually. Markdown output is passed through `rehype-sanitize`. (`src/lib/ remark-reading-time.mjs` with a leading space is a stray duplicate; the config imports the one without the space.)
-- `src/content/posts/config.ts` is a legacy collection definition (`now` with `rssSchema`) and is not used by `content.config.ts`.
-- **Layouts**: `Layout.astro` (home), `BasicLayout.astro` (holds the Umami analytics script), `PostLayout.astro` (post pages, GSAP fade-in), plus `PostFeedLayout`, `ProjectLayout`, `TagsLayout`.
-- **Islands**: mixed frameworks are enabled — Solid (`Globe.tsx`, a D3 globe using `src/lib/world.json`; `Tooltip/`) and Svelte. Animation libraries in use: `motion` (home), `gsap` + ScrollTrigger (posts/tags; typed via `src/declarations.d.ts`), Rive (`.riv` assets are allowed via `vite.assetsInclude`).
+  Post URLs are always `/${category}/${post.id}`; each `[slug]` route only generates pages for its own category. `/tags/[...tag]` groups by `tags`.
+- **Schema**: `image` and `author` are required; `image` is also used as the post's og:image. `minutesRead` is injected at build time by `src/lib/remark-reading-time.mjs` (registered in `astro.config.mjs`), so don't set it manually. Markdown output is passed through `rehype-sanitize`.
+- **Layouts**: everything renders through `BasicLayout.astro`, which owns `<html>`/`<head>`: SEO meta (canonical, OG/Twitter, JSON-LD), the Content-Security-Policy meta tag, and the Umami analytics script. Any new external script or fetch origin must be added to that CSP. Wrappers: `Layout` (home, provides the `.loader` overlay), `PostLayout` (posts, GSAP fade-in), `PostFeedLayout` (feed pages, adds Navbar), `TagsLayout`. Page content and page `<script>`s must go *inside* the layout element, otherwise they render outside `<html>`.
+- **Islands**: Solid (`Globe.tsx`, a D3 globe using `src/lib/world.json`; `Tooltip/`). The Svelte integration is enabled but no `.svelte` components exist. Animation: `motion` v14 (home cards and loader; spring easing is `type: spring` plus options, not `easing: spring(...)`), `gsap` + ScrollTrigger (posts/tags; typed via `src/declarations.d.ts`).
+- **Plain `<script>` tags in `.astro` files are not Solid components**: Solid lifecycle hooks (`onMount`, etc.) do nothing there.
 - **Styling**: UnoCSS (`uno.config.ts`, `presetUno`) with custom `gray` (teal), `darkslate`, and `primary` palettes and a `hide-scrollbar` rule; global CSS in `src/styles/global.css`.
 - **Feeds/SEO**: `src/pages/rss.xml.js`, `@astrojs/sitemap`, `astro-robots-txt`; `site` in `astro.config.mjs` is `https://projects.imartin.dev/`.
 
