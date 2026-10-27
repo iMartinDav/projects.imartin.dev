@@ -41,7 +41,9 @@ const posts = (await getCollection("posts"))?.sort(
   document.addEventListener("DOMContentLoaded", animatePosts);
 </script>
 
-<PostFeedLayout title="BioCode: Blog" description="">
+<PostFeedLayout
+  title="BioCode: Blog"
+  description="BioCode: articles by Martin DAVILA on bioinformatics, genomics and the code behind them.">
   <div
     class="w-screen h-full flex flex-col justify-start items-start max-w-2xl mx-auto p-2 md:py-5"
   >
