@@ -1,34 +1,24 @@
 ---
-import {
-	formatTimeForLosAngeles,
-	getCurrentTimeInLosAngeles,
-} from "../lib/helpers";
+import { formatParisTime } from "../lib/helpers";
 import Card from "./Card/index.astro";
+
+const now = new Date();
 ---
 
 <script>
-  import { onCleanup, onMount } from "solid-js";
-import { formatTimeForLosAngeles } from "../lib/helpers";
+  import { formatParisTime } from "../lib/helpers";
 
-  let interval: ReturnType<typeof setInterval>;
+  const timeDisplay = document.getElementById("timeDisplay");
 
-  function updateClock() {
-    const timeDisplay = document.getElementById("timeDisplay");
+  const updateClock = () => {
+    if (!timeDisplay) return;
     const now = new Date();
+    timeDisplay.textContent = formatParisTime(now);
+    timeDisplay.setAttribute("datetime", now.toISOString());
+  };
 
-    if (timeDisplay) {
-      timeDisplay.textContent = formatTimeForLosAngeles(now);
-      timeDisplay.setAttribute("datetime", now.toISOString());
-    }
-  }
-
-  onMount(() => {
-    interval = setInterval(updateClock, 1000);
-  });
-
-  onCleanup(() => {
-    clearInterval(interval);
-  });
+  updateClock();
+  setInterval(updateClock, 1000);
 </script>
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-4" title="Local Time:">
@@ -37,10 +27,10 @@ import { formatTimeForLosAngeles } from "../lib/helpers";
   </div> -->
 
   <time
-    datetime=""
+    datetime={now.toISOString()}
     id="timeDisplay"
     class="text-3xl md:text-2xl lg:text-5xl flex f-bold h-full mt-5"
   >
-    {formatTimeForLosAngeles(getCurrentTimeInLosAngeles())}
+    {formatParisTime(now)}
   </time>
 </Card>

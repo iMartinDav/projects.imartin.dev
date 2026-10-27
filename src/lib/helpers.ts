@@ -3,40 +3,30 @@ export function trimText(input: string, maxLength: number = 100): string {
   return input.substring(0, maxLength - 3) + '...';
 }
 
-// Helper function to determine if Daylight Saving Time is in effect for a given date
-function isDST(date: Date): boolean {
-  const jan = new Date(date.getFullYear(), 0, 1).getTimezoneOffset();
-  const jul = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
-  return Math.max(jan, jul) !== date.getTimezoneOffset(); // True if DST is in effect
-}
+const PARIS_TIME_ZONE = 'Europe/Paris';
 
-export function getCurrentTimeInLosAngeles(): Date {
-  // Create a date object with the current UTC time
-  const now = new Date();
-
-  // Villeurbanne is in Central European Time (UTC+1), but during Daylight Saving Time it's UTC+2
-  const offsetVilleurbanne = isDST(now) ? 2 : 1; // Adjust for DST
-  now.setHours(now.getUTCHours() + offsetVilleurbanne);
-
-  return now;
-}
-
-export function formatTimeForLosAngeles(date: Date): string {
-  const options: Intl.DateTimeFormatOptions = {
+/**
+ * Formats a date as the wall-clock time in Paris (Lyon), suffixed with the
+ * zone abbreviation in effect at that instant, e.g. "9:05:03 PM CET".
+ * Independent of the server's and the visitor's own time zone.
+ */
+export function formatParisTime(date: Date): string {
+  const time = new Intl.DateTimeFormat('fr-FR', {
     hour: 'numeric',
     minute: '2-digit',
     second: '2-digit',
-    hour12: true, // This will format the time in 12-hour format with AM/PM
-    timeZone: 'Europe/Paris'
-  };
+    hour12: true,
+    timeZone: PARIS_TIME_ZONE
+  }).format(date);
 
-  let formattedTime = new Intl.DateTimeFormat('fr-FR', options).format(date);
+  const zone = new Intl.DateTimeFormat('en-GB', {
+    timeZone: PARIS_TIME_ZONE,
+    timeZoneName: 'short'
+  })
+    .formatToParts(date)
+    .find((part) => part.type === 'timeZoneName')?.value;
 
-  // Append the time zone abbreviation. For simplicity, appending "CET" or "CEST" depending on Daylight Saving Time.
-  const timezoneSuffix = isDST(date) ? ' CEST' : ' CET';
-  formattedTime += timezoneSuffix;
-
-  return formattedTime;
+  return zone ? `${time} ${zone}` : time;
 }
 
 export function formatDate(date: Date): string {
@@ -64,6 +54,3 @@ export function customBack() {
     history.back();
   }
 }
-
-// Make sure to expose this function globally if it's being called directly in inline event handlers
-// window.customBack = customBack;
