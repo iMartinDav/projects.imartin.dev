@@ -93,41 +93,10 @@ pageObjects.sort((a, b) => {
 const Content = pageObjects;
 ---
 
-<script>
-  import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  const animatePosts = () => {
-    const posts = document.querySelectorAll(".post-item");
-    posts.forEach((post) => {
-      gsap.fromTo(
-        post,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.25,
-          delay: 0.1,
-          scrollTrigger: {
-            trigger: post,
-            start: "top 95%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-  };
-
-  document.addEventListener("DOMContentLoaded", animatePosts);
-</script>
-
-<div>
-  <TagsLayout
-    title={`iMartin.dev: #${tagParam}`}
-    description={`Projects and articles tagged ${tagParam}.`}
-  />
-
+<TagsLayout
+  title={`iMartin.dev: #${tagParam}`}
+  description={`Projects and articles tagged ${tagParam}.`}
+>
   <Navbar />
 
   <div
@@ -141,7 +110,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
       Other posts tagged with "{tagParam}".
     </div>
     <div class="w-full">
-      <ul class="">
+      <div>
         {
           Content.map((post) => (
             <div class="post-item opacity-0">
@@ -160,7 +129,36 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
             </div>
           ))
         }
-      </ul>
+      </div>
     </div>
   </div>
-</div>
+
+  <script>
+    import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const animatePosts = () => {
+      const posts = document.querySelectorAll(".post-item");
+      posts.forEach((post) => {
+        gsap.fromTo(
+          post,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.25,
+            delay: 0.1,
+            scrollTrigger: {
+              trigger: post,
+              start: "top 95%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+    };
+
+    document.addEventListener("DOMContentLoaded", animatePosts);
+  </script>
+</TagsLayout>

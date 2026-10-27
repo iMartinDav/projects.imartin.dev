@@ -141,6 +141,17 @@ const { frontmatter } = Astro.props;
       <slot />
     </article>
   </main>
+
+  <script>
+    import { gsap } from "gsap";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.to("#post-title", { opacity: 1, duration: 0.5 });
+      gsap.to("#post-image", { opacity: 1, duration: 1 });
+      gsap.to("#post-description", { opacity: 1, duration: 1.5 });
+      gsap.to("#post-content", { opacity: 1, delay: 0.25, duration: 0.5 });
+    });
+  </script>
 </BasicLayout>
 
 <style is:global>
@@ -149,13 +160,3 @@ const { frontmatter } = Astro.props;
   }
 </style>
 
-<script>
-  import { gsap } from "gsap";
-
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.to("#post-title", { opacity: 1, duration: 0.5 });
-    gsap.to("#post-image", { opacity: 1, duration: 1 });
-    gsap.to("#post-description", { opacity: 1, duration: 1.5 });
-    gsap.to("#post-content", { opacity: 1, delay: 0.25, duration: 0.5 });
-  });
-</script>

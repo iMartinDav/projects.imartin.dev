@@ -10,31 +10,6 @@ import TimeZone from "../components/TimeZoneCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<script>
-  import { spring, stagger, animate, type AnimationSequence } from "motion";
-  import { loaderAnimation } from "../lib/constants";
-  const cards = document.querySelectorAll(".card");
-
-  const sequence: AnimationSequence = [
-    loaderAnimation,
-    [
-      cards,
-      { y: ["33%", "0%"], opacity: [0, 1] },
-      {
-        at: "-0.1",
-        duration: 0.25,
-        delay: stagger(0.1),
-        type: spring,
-        velocity: 100,
-        stiffness: 50,
-        damping: 25,
-      },
-    ],
-  ];
-
-  animate(sequence);
-</script>
-
 <Layout
   title="Projects"
   description="Martin DAVILA, bioinformatics engineer: projects, BioCode articles and tools for turning genomic data into actionable insights.">
@@ -73,6 +48,31 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </Card>
   </main>
+
+  <script>
+    import { spring, stagger, animate, type AnimationSequence } from "motion";
+    import { loaderAnimation } from "../lib/constants";
+    const cards = document.querySelectorAll(".card");
+
+    const sequence: AnimationSequence = [
+      loaderAnimation,
+      [
+        cards,
+        { y: ["33%", "0%"], opacity: [0, 1] },
+        {
+          at: "-0.1",
+          duration: 0.25,
+          delay: stagger(0.1),
+          type: spring,
+          velocity: 100,
+          stiffness: 50,
+          damping: 25,
+        },
+      ],
+    ];
+
+    animate(sequence);
+  </script>
 </Layout>
 
 <style is:global>

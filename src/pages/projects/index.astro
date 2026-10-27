@@ -12,35 +12,6 @@ const posts = (await getCollection("posts"))?.sort(
 );
 ---
 
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  const animatePosts = () => {
-    const posts = document.querySelectorAll(".post-item");
-    posts.forEach((post) => {
-      gsap.fromTo(
-        post,
-        { opacity: 0, y: 10 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          delay: 0.0,
-          scrollTrigger: {
-            trigger: post,
-            start: "top 95%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-  };
-
-  document.addEventListener("DOMContentLoaded", animatePosts);
-</script>
-
 <PostFeedLayout
   title="iMartin.dev: projects"
   description="Bioinformatics and AI projects by Martin DAVILA, from genomics platforms to data pipelines.">
@@ -87,13 +58,42 @@ const posts = (await getCollection("posts"))?.sort(
       </ul>
     </div>
   </div>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const animatePosts = () => {
+      const posts = document.querySelectorAll(".post-item");
+      posts.forEach((post) => {
+        gsap.fromTo(
+          post,
+          { opacity: 0, y: 10 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            delay: 0.0,
+            scrollTrigger: {
+              trigger: post,
+              start: "top 95%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+    };
+
+    document.addEventListener("DOMContentLoaded", animatePosts);
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const postItems = document.querySelectorAll(".post-item");
+      postItems.forEach((postItem) => {
+        postItem.classList.remove("opacity-0");
+      });
+    });
+  </script>
 </PostFeedLayout>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const postItems = document.querySelectorAll(".post-item");
-    postItems.forEach((postItem) => {
-      postItem.classList.remove("opacity-0");
-    });
-  });
-</script>
