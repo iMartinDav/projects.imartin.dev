@@ -17,13 +17,6 @@ const allTags = posts
 const uniqueTags = [...new Set(allTags.sort())];
 ---
 
-<script>
-  import { animate } from "motion";
-  import { loaderAnimation } from "../../lib/constants";
-
-  animate([loaderAnimation]);
-</script>
-
 <PostFeedLayout
   title="iMartin.dev: tags"
   description="Browse all projects and BioCode articles by tag.">

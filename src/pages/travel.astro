@@ -4,20 +4,6 @@ import BasicLayout from "../layouts/BasicLayout.astro";
 import Navbar from "../components/Navbar.astro";
 ---
 
-<script>
-  import { animate, type AnimationSequence } from "motion";
-
-  const sequence: AnimationSequence = [
-    [
-      ".loaderRef",
-      { opacity: [1, 0] },
-      { ease: "easeOut", duration: 2 },
-    ],
-  ];
-
-  animate(sequence);
-</script>
-
 <BasicLayout
   title="iMartin.dev: visited countries"
   description="A 3d globe showing countries that I have visited so far"

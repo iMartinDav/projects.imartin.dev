@@ -42,3 +42,6 @@ public/resume.pdf
 
 # Local env files
 .env*.local
+
+# Lighthouse reports
+lighthouse-report*.json

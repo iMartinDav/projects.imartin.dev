@@ -35,7 +35,4 @@ export default defineConfig({
 	output: "server",
 	compressHTML: true,
 	adapter: vercel(),
-	vite: {
-		assetsInclude: "**/*.riv",
-	},
 });
